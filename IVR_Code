@@ -1,0 +1,2140 @@
+{
+  "description": "IVR",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "InitialState",
+      "properties": {
+        "offset": {
+          "x": -590,
+          "y": -210
+        },
+        "flow_url": "https://webhooks.twilio.com/v1/Accounts/AC0f0f66df1fe128ad305ed291dce48773/Flows/FW6f8dab405ef6f092905fac382ba705eb"
+      },
+      "transitions": [
+        {
+          "event": "incomingMessage",
+          "conditions": [],
+          "next": null,
+          "uuid": "6c802201-f801-4d1e-8f9e-3c105b7e0283"
+        },
+        {
+          "event": "incomingCall",
+          "conditions": [],
+          "next": "FF3807fbf37741ef75c486cb8abe19f052",
+          "uuid": "0b4f4e44-e840-4ecd-ac5e-a9217ba2d4f6"
+        },
+        {
+          "event": "incomingRequest",
+          "conditions": [],
+          "next": null,
+          "uuid": "930b6a45-d265-4789-9aff-344ba9cdeda1"
+        }
+      ],
+      "sid": "FF19d5506ff6f29d2598f2ce3ac01e1ea7"
+    },
+    {
+      "name": "Sex",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -490,
+          "y": 210
+        },
+        "timeout": 3,
+        "finish_on_key": "",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you are male press 1, if you are female press 2 .",
+        "play": null,
+        "voice": "alice",
+        "language": "en",
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FFe518b74cd51970f8209323d9554b6ad9",
+          "uuid": "610bbd80-b5db-4021-9460-b9a43b44c48f"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "35006fa4-80cf-4574-b7aa-41ee754e937f"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF22da4fd07dc46ad8c040c19ec564fc40",
+          "uuid": "9fb792e8-176d-4fbc-a06e-10f6e78821ba"
+        }
+      ],
+      "sid": "FF662575a20cef8832a6839da62ddff26c"
+    },
+    {
+      "name": "Age",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -490,
+          "y": 430
+        },
+        "timeout": 3,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": 3,
+        "save_response_as": null,
+        "say": "Please type your age on the keypad.",
+        "play": null,
+        "voice": null,
+        "language": "en-GB",
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF45cc5d5a83fcecdb3756795c7116a396",
+          "uuid": "3cbf5490-6f31-4f38-ad27-6e17b0542d54"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "bfbbc4fa-8dd7-4768-94e1-3f3f96e50e05"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF73a7bd8147251004294b5780967912a5",
+          "uuid": "a96af5f7-0125-4fe0-b227-3a38d0b61f9f"
+        }
+      ],
+      "sid": "FFe518b74cd51970f8209323d9554b6ad9"
+    },
+    {
+      "name": "Symptoms_fever",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -490,
+          "y": 650
+        },
+        "timeout": 3,
+        "finish_on_key": "",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have a fever press 1. If you do not have a fever press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF5ea68225a978893d6d0f48ff9fa7c84d",
+          "uuid": "7914a2cf-7ec5-4e92-96f8-2fd463e78b9f"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "15db40c1-211b-48c9-86f5-94addd3ddd0d"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFd252719cc97f19cb03cdab2e2dff6735",
+          "uuid": "61506a75-6a54-49c0-bc77-faa7e8ac8e39"
+        }
+      ],
+      "sid": "FF45cc5d5a83fcecdb3756795c7116a396"
+    },
+    {
+      "name": "Symptoms_RTI",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -2460,
+          "y": 1180
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have a cough or difficulty breathing press one. If you do not have a cough or difficulty breathing press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF1df0063edbf01a9488de54266a774544",
+          "uuid": "84e7c5b1-0aa5-430f-b7c7-34553d914b86"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "d9a1fa77-754a-46d1-b939-01f627db50b5"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFf031af39a828313476d2e6ed76dea33e",
+          "uuid": "b13802c7-118c-40c6-bb65-d57fead84f04"
+        }
+      ],
+      "sid": "FF43d70c99a395bb723302fb96889c35d6"
+    },
+    {
+      "name": "Risk_factors",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -2450,
+          "y": 1630
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have any pre-existing conditions like diabetes hypertension or HIV press one. If not press two.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF82574e7cae34e72db3154352e10346da",
+          "uuid": "d981052d-4936-4b93-9f1c-381feb2238e1"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "8ac0ee97-6066-4a1e-b037-46aea5421bf6"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF5151ce5e02206740a7dd5494d25141a3",
+          "uuid": "017037d2-f245-4899-a816-9c9395c9e233"
+        }
+      ],
+      "sid": "FFc0cd5ed788a4f987a16b0a4dac835c27"
+    },
+    {
+      "name": "Contact_tracing",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -2460,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have you been in close contact with someone who is confirmed or suspected to have Coronavirus Press 1. If you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus  press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FFf6c46e408d659c40d8a30581030c4a07",
+          "uuid": "b3274b41-09ae-4797-94cc-3b03b754a829"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "9ee15714-398d-4e2b-bcda-e095b485c321"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF05694a796694f5da86b02fa4275ac1bb",
+          "uuid": "41fa273d-244e-49f5-a44a-58a0e68eff61"
+        }
+      ],
+      "sid": "FF9061ba1a6775d5588abb53055aaa053c"
+    },
+    {
+      "name": "High_risk",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -670,
+          "y": 2740
+        },
+        "say": "There is high risk that you might have Coronavirus. Please standby while we connect you to a health personnel to get more details from you. Please arrange to go to your nearest test center for a Coronavirus test.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": null,
+          "uuid": "1fc4a8c8-a39d-4823-90fc-9c25eb389ea4"
+        }
+      ],
+      "sid": "FF71d1a571ff43239e16c5fc44f482c4f2"
+    },
+    {
+      "name": "Moderate_risk",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 2740
+        },
+        "say": "There is a medium risk that you might have Coronavirus. Stay home, self isolate  and arrange for testing for Coronavirus. If test is positive please isolate for 14 days with last 5 days being fever free. Your household members should also be tested for Coronavirus.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": null,
+          "uuid": "c5dfb168-1225-44ec-bbcc-f0e8fcc04e27"
+        }
+      ],
+      "sid": "FF2ec16196c04940034cb11927c0a0841c"
+    },
+    {
+      "name": "Low_risk",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 960,
+          "y": 2740
+        },
+        "say": "You have a low risk of having Coronavirus. Please keep watch and call again if the conditions get worse.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": null,
+          "uuid": "30d7c19a-ca55-4294-909e-2aa5732843db"
+        }
+      ],
+      "sid": "FFde3734f81d25963f44bd58871b905000"
+    },
+    {
+      "name": "Fever_Options",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -490,
+          "y": 870
+        },
+        "input": "{{widgets.Symptoms_fever.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FFd252719cc97f19cb03cdab2e2dff6735",
+          "uuid": "1df06b68-d062-40c3-91e1-e4f21077a3d3"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_fever.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF43d70c99a395bb723302fb96889c35d6",
+          "uuid": "91011b53-3aac-4758-8a11-c4c5dea85eae"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_fever.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF514347b6dbc32233bea10d570e38727f",
+          "uuid": "d1f4def1-87c9-4bc3-ba55-f27d68b1dd1c"
+        }
+      ],
+      "sid": "FF5ea68225a978893d6d0f48ff9fa7c84d"
+    },
+    {
+      "name": "RTI_Options",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -2460,
+          "y": 1400
+        },
+        "input": "{{widgets.Symptoms_RTI.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FFf031af39a828313476d2e6ed76dea33e",
+          "uuid": "bf0b1510-b719-40ba-904a-8ffb59ae817d"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_RTI.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FFc0cd5ed788a4f987a16b0a4dac835c27",
+          "uuid": "6ca90f5f-dd5a-4890-8fe5-e973b73e2db8"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_RTI.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF5053e7c53fec4c38a71295b4e73c5de3",
+          "uuid": "2d44b189-041f-4255-bf8a-057e0b4ede27"
+        }
+      ],
+      "sid": "FF1df0063edbf01a9488de54266a774544"
+    },
+    {
+      "name": "Contact_Options",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -2460,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_tracing.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF05694a796694f5da86b02fa4275ac1bb",
+          "uuid": "ca794c1c-155e-454a-a300-d163e6c8f1f2"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_tracing.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "cbf5f828-1e18-4733-8d08-ef8ac2657762"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_tracing.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "53abbdd5-53dd-451e-a6d2-66affc912a4a"
+        }
+      ],
+      "sid": "FFf6c46e408d659c40d8a30581030c4a07"
+    },
+    {
+      "name": "Location",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -480,
+          "y": -10
+        },
+        "timeout": 3,
+        "finish_on_key": "",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Welcome to the Coronavirus tracking system. Press 1 if you are in Lilongwe, 2 if you are in Blantyer, 3 if you are in Mzuzu, 4 if you are in Zomba or 5 if you are anywhere else in Malawi.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF662575a20cef8832a6839da62ddff26c",
+          "uuid": "ebadee84-fe57-45f6-a5d4-004b2b77b8fc"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "4fdffd51-3263-47b9-b4d6-13a1d563bc47"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFcd22f8434e39541d7873717e5ebef1ba",
+          "uuid": "a3d4982f-f619-4e1e-ab29-4d1391f00b52"
+        }
+      ],
+      "sid": "FF3807fbf37741ef75c486cb8abe19f052"
+    },
+    {
+      "name": "Symptoms_RTI2",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 1180
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have a cough or difficulty breathing. Press 2 if you do not have a cough or difficulty breathing.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF80a7d53c499aac5b5b5150cf01ff6ce2",
+          "uuid": "8ca0b748-78bc-4951-9865-053e8b68baa6"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "7bd9626a-6b17-4858-a146-b1d65088aae1"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF5ede01de35eaccbb306524264785bed4",
+          "uuid": "490cb2fd-75ab-4b9a-a637-e7f0cd751e52"
+        }
+      ],
+      "sid": "FF514347b6dbc32233bea10d570e38727f"
+    },
+    {
+      "name": "RTI_Options2",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 1400
+        },
+        "input": "{{widgets.Symptoms_RTI2.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF5ede01de35eaccbb306524264785bed4",
+          "uuid": "dab66648-f902-4e24-978c-4c7aec480afd"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_RTI2.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF02d218c97ca2fcccf4bf30e652e029a7",
+          "uuid": "945a2999-f864-4526-bf3f-75f6ee9ba200"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Symptoms_RTI2.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF5c33abcc3055ce7f7991b85b08d2215b",
+          "uuid": "42bdbf96-c00d-45ff-b1fe-2fb43a57da1a"
+        }
+      ],
+      "sid": "FF80a7d53c499aac5b5b5150cf01ff6ce2"
+    },
+    {
+      "name": "Risk_factors2",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 1650
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have any pre-existing conditions like diabetes, hypertension or HIV/AIDS. Press 2 if you do not have any pre-existing conditions.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF3abdc430e1b135b742353623aac51554",
+          "uuid": "f78d9a58-1c4c-4376-8472-1dd67efc9c3d"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "56f52365-f144-49b9-80db-db5a1a290e3a"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF301aafa157adc70df712a0a12de4b952",
+          "uuid": "0737ec6e-1b5a-45a3-b991-e3e996427d4d"
+        }
+      ],
+      "sid": "FF02d218c97ca2fcccf4bf30e652e029a7"
+    },
+    {
+      "name": "Risk_Options2",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 1870
+        },
+        "input": "{{widgets.Risk_factors2.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF301aafa157adc70df712a0a12de4b952",
+          "uuid": "0f28c86c-64e9-470d-8915-837dce358a44"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factors2.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FFd94aeaa8edd3f4e8a4c45ada2a7a6717",
+          "uuid": "cb4cc547-0077-4b74-a9b5-570347c89432"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factors2.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF4209faad06e6e58b69f6d237e191540e",
+          "uuid": "8823947a-ef8e-44f3-8379-3374388d2afd"
+        }
+      ],
+      "sid": "FF3abdc430e1b135b742353623aac51554"
+    },
+    {
+      "name": "Risk_Options",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -2460,
+          "y": 1850
+        },
+        "input": "{{widgets.Risk_factors.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF5151ce5e02206740a7dd5494d25141a3",
+          "uuid": "1c9e563b-9b91-4266-830c-4173fe4d06b9"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factors.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF9061ba1a6775d5588abb53055aaa053c",
+          "uuid": "63fb3060-4841-4752-8599-2ed6940f78bb"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factors.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF65c93b53c6b13fa785a2ee82551a32f3",
+          "uuid": "b11a5c38-1fe9-4bc3-a1e3-a023f842f189"
+        }
+      ],
+      "sid": "FF82574e7cae34e72db3154352e10346da"
+    },
+    {
+      "name": "Contact_Tracing2",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have been in close contact with someone who is confirmed or suspected to have  Coronavirus . Press 2 if you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus .",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF6a0364f69711257193cbe8a0590e79ec",
+          "uuid": "32af3640-f56a-4bee-9057-dd0038813d00"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "d5c9bec3-6343-4969-8ad4-39c99a4a7ac7"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF78f780fa9b7d922c6e5db4d6421c3d6d",
+          "uuid": "371c6e36-a164-4ff1-8be2-4c8feac50bcf"
+        }
+      ],
+      "sid": "FFd94aeaa8edd3f4e8a4c45ada2a7a6717"
+    },
+    {
+      "name": "Contact_Options2",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 170,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing2.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF78f780fa9b7d922c6e5db4d6421c3d6d",
+          "uuid": "44195017-f662-4ca3-ac07-2620bd9061a8"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing2.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "a218b198-6682-475b-9ec1-f66151e057b3"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing2.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF2ec16196c04940034cb11927c0a0841c",
+          "uuid": "f7586983-9844-482e-b917-5ae8b17e83dd"
+        }
+      ],
+      "sid": "FF6a0364f69711257193cbe8a0590e79ec"
+    },
+    {
+      "name": "say_play_1",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -860,
+          "y": 780
+        },
+        "say": "Sorry, but that is not a correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF45cc5d5a83fcecdb3756795c7116a396",
+          "uuid": "9b86e573-5b81-46dd-84dd-be684792a4da"
+        }
+      ],
+      "sid": "FFd252719cc97f19cb03cdab2e2dff6735"
+    },
+    {
+      "name": "say_play_2",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -2770,
+          "y": 1310
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF43d70c99a395bb723302fb96889c35d6",
+          "uuid": "80dfce38-3390-4a85-bf88-d7dd72835cf3"
+        }
+      ],
+      "sid": "FFf031af39a828313476d2e6ed76dea33e"
+    },
+    {
+      "name": "say_play_3",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -2780,
+          "y": 1750
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFc0cd5ed788a4f987a16b0a4dac835c27",
+          "uuid": "d4b3bd8e-3619-4f0c-b347-d0e4660adadc"
+        }
+      ],
+      "sid": "FF5151ce5e02206740a7dd5494d25141a3"
+    },
+    {
+      "name": "say_play_4",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -2780,
+          "y": 2180
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF9061ba1a6775d5588abb53055aaa053c",
+          "uuid": "31e992b3-0c68-4990-affb-883c094112e7"
+        }
+      ],
+      "sid": "FF05694a796694f5da86b02fa4275ac1bb"
+    },
+    {
+      "name": "Risk_factor3",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 830,
+          "y": 1650
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have any pre-existing conditions like diabetes, hypertension or HIV/AIDS. Press 2 if you do not have any pre-existing conditions.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF78f997b51c0fa93357cb8354ab54146c",
+          "uuid": "d8c26bea-a251-483d-8262-6c5c85c5040f"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "dc64fc7b-221c-45c2-b714-84cf6e59e563"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF9dc5753a98f54637788482b82eeac219",
+          "uuid": "c4fb0e29-8a95-4c40-aaaa-e90d3e832859"
+        }
+      ],
+      "sid": "FF5c33abcc3055ce7f7991b85b08d2215b"
+    },
+    {
+      "name": "Risk_Options3",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 840,
+          "y": 1870
+        },
+        "input": "{{widgets.Risk_factor3.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF9dc5753a98f54637788482b82eeac219",
+          "uuid": "7a9ad55f-581d-4c06-b293-f9892352327b"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factor3.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FFccda5246db45053b2b125368eceb4cdb",
+          "uuid": "431d3907-fb8e-436d-b0c4-adfa8e9c7b59"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_factor3.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF336b400c3a2ed301a3bf0d304e9df74c",
+          "uuid": "42530145-878f-4713-8d36-e24b92822317"
+        }
+      ],
+      "sid": "FF78f997b51c0fa93357cb8354ab54146c"
+    },
+    {
+      "name": "Contact_Tracing3",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 840,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have been in close contact with someone who is confirmed or suspected to have  Coronavirus . Press 2 if you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus .",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF5160113836b6bc715e18aa376d3f66b7",
+          "uuid": "3326275d-753b-4075-b3c4-2917b723fef3"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "e1253c6f-bfc1-40f9-a721-ad1adfdafbf2"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFeeb89e6bec1c80357015bd26bf7a8508",
+          "uuid": "5e20d7d3-9e1e-40d8-af9f-9347ace3cd23"
+        }
+      ],
+      "sid": "FF4209faad06e6e58b69f6d237e191540e"
+    },
+    {
+      "name": "Contact_Tracing4",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 1490,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have been in close contact with someone who is confirmed or suspected to have  Coronavirus . Press 2 if you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus .",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF8f74463f4f1dc9170e21066ed60351bb",
+          "uuid": "b492d39a-58cc-486a-819e-12c600ce722c"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "3dce38a7-966a-4200-b604-caddd0b6cd40"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF48f25cbc15d3f887bd8c354f0fa6e1d5",
+          "uuid": "f283013c-592b-4528-9af1-63217bd69979"
+        }
+      ],
+      "sid": "FFccda5246db45053b2b125368eceb4cdb"
+    },
+    {
+      "name": "Contact_Options3",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 840,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing3.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FFeeb89e6bec1c80357015bd26bf7a8508",
+          "uuid": "f8e6a47c-c719-457c-9f5a-28cbd7db53b7"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing3.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "ff675913-b2ba-4736-ab6a-26be2484e8aa"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing3.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFde3734f81d25963f44bd58871b905000",
+          "uuid": "4acf42bd-9d80-46fc-a6be-56f12dcb0f00"
+        }
+      ],
+      "sid": "FF5160113836b6bc715e18aa376d3f66b7"
+    },
+    {
+      "name": "Contact_Options4",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 1490,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing4.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF48f25cbc15d3f887bd8c354f0fa6e1d5",
+          "uuid": "bcfc7f87-a3b7-4b58-be0c-a50eba6bd03a"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing4.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF2ec16196c04940034cb11927c0a0841c",
+          "uuid": "5239ca12-396a-4d42-b641-99ad8e3d8d9f"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing4.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFde3734f81d25963f44bd58871b905000",
+          "uuid": "aa2fb52e-6f95-4185-9ea6-b1e68780eb99"
+        }
+      ],
+      "sid": "FF8f74463f4f1dc9170e21066ed60351bb"
+    },
+    {
+      "name": "Contact_Tracing5",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": 2140,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "Press 1 if you have been in close contact with someone who is confirmed or suspected to have  Coronavirus . Press 2 if you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus .",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF3ac0c791329fa2a539e0e947a77034d5",
+          "uuid": "49ec2b77-5e3e-4c85-871b-946632d9e971"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "25bfc325-3afe-4030-8775-26989b8f2bdd"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF7b737426785e064da78e49c64807f4f1",
+          "uuid": "3a2d3c57-3000-4a0a-97a9-17c252d6f258"
+        }
+      ],
+      "sid": "FF336b400c3a2ed301a3bf0d304e9df74c"
+    },
+    {
+      "name": "Contact_Options5",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": 2140,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing5.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF7b737426785e064da78e49c64807f4f1",
+          "uuid": "7ce6d883-9776-4b43-a2c4-168e50dc71d0"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing5.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF2ec16196c04940034cb11927c0a0841c",
+          "uuid": "1325a65f-7759-497e-b6b1-9a7a12784a3d"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing5.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFde3734f81d25963f44bd58871b905000",
+          "uuid": "3247f8a8-ed71-4782-a2b2-3b198c1dc4cd"
+        }
+      ],
+      "sid": "FF3ac0c791329fa2a539e0e947a77034d5"
+    },
+    {
+      "name": "say_play_5",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -160,
+          "y": 1310
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF514347b6dbc32233bea10d570e38727f",
+          "uuid": "31a28c20-7dd8-457d-8ed9-99b6262d4540"
+        }
+      ],
+      "sid": "FF5ede01de35eaccbb306524264785bed4"
+    },
+    {
+      "name": "say_play_6",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -190,
+          "y": 1780
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF02d218c97ca2fcccf4bf30e652e029a7",
+          "uuid": "86ef6d82-1a2c-4df5-ae5f-9367705ada6e"
+        }
+      ],
+      "sid": "FF301aafa157adc70df712a0a12de4b952"
+    },
+    {
+      "name": "say_play_7",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -190,
+          "y": 2220
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFd94aeaa8edd3f4e8a4c45ada2a7a6717",
+          "uuid": "bd912396-188c-435c-ad72-5bec22261135"
+        }
+      ],
+      "sid": "FF78f780fa9b7d922c6e5db4d6421c3d6d"
+    },
+    {
+      "name": "say_play_8",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 480,
+          "y": 1770
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF5c33abcc3055ce7f7991b85b08d2215b",
+          "uuid": "edfe2182-dc69-458d-b195-254e324c2d8b"
+        }
+      ],
+      "sid": "FF9dc5753a98f54637788482b82eeac219"
+    },
+    {
+      "name": "say_play_9",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 500,
+          "y": 2210
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF4209faad06e6e58b69f6d237e191540e",
+          "uuid": "8b252aff-ec35-43f6-b961-98a827735c5e"
+        }
+      ],
+      "sid": "FFeeb89e6bec1c80357015bd26bf7a8508"
+    },
+    {
+      "name": "say_play_10",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 1150,
+          "y": 2230
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFccda5246db45053b2b125368eceb4cdb",
+          "uuid": "5d3b0553-1763-4f24-b4db-a6e5c50dbe81"
+        }
+      ],
+      "sid": "FF48f25cbc15d3f887bd8c354f0fa6e1d5"
+    },
+    {
+      "name": "say_play_11",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": 1800,
+          "y": 2240
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF336b400c3a2ed301a3bf0d304e9df74c",
+          "uuid": "72ecaaea-8f4e-4225-977c-d1834aecd47e"
+        }
+      ],
+      "sid": "FF7b737426785e064da78e49c64807f4f1"
+    },
+    {
+      "name": "Risk_Factors1",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -1790,
+          "y": 1630
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have any pre-existing conditions like diabetes hypertension or HIV press one. If not press two.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF357362fa286c65cfc28f7c035ec12b82",
+          "uuid": "ea6bd15d-2471-4bb6-a6c5-5d6f6580f3b6"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "188601cc-6042-4733-bf19-e42d22466db4"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFb126907d7ee2d7989ddf68ddecab5c62",
+          "uuid": "0c810518-8950-4bd6-89b1-4b998a1d4c0e"
+        }
+      ],
+      "sid": "FF5053e7c53fec4c38a71295b4e73c5de3"
+    },
+    {
+      "name": "Risk_Options1",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -1790,
+          "y": 1860
+        },
+        "input": "{{widgets.Risk_Factors1.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FFb126907d7ee2d7989ddf68ddecab5c62",
+          "uuid": "0774ba37-a4e8-4656-9122-ff6653424e11"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_Factors1.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FFcc5f7f26bb0774c1b91b89d08da6a5b6",
+          "uuid": "27cc5abc-e3ef-4b65-a914-cc86e196afea"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Risk_Factors1.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFf283310e65a140859423115d5efc6cdf",
+          "uuid": "b1379b43-0763-4cf8-a2bf-3a6b9627e207"
+        }
+      ],
+      "sid": "FF357362fa286c65cfc28f7c035ec12b82"
+    },
+    {
+      "name": "Contact_Tracing1",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -1170,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have you been in close contact with someone who is confirmed or suspected to have  Coronavirus  Press 1. If you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus  press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF1c32a6bf1271ca1b2f63df894d17d7b8",
+          "uuid": "1d1c5d2c-1bf0-4ff0-b0ee-58e849f4d309"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "e2d3c9a4-3d33-49c7-b103-21452e50c2a4"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF01b11d5cc39fbe86d31fa5450be1c671",
+          "uuid": "90662ff6-c2c2-470f-a3b2-8f391b1ef85b"
+        }
+      ],
+      "sid": "FFcc5f7f26bb0774c1b91b89d08da6a5b6"
+    },
+    {
+      "name": "Contact_Options1",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -1170,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing1.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF01b11d5cc39fbe86d31fa5450be1c671",
+          "uuid": "d6d5d169-3074-4920-ad77-78d8e856b0aa"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "eeef6c3d-2f57-4ab3-8c5c-416f02c5f080"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFde3734f81d25963f44bd58871b905000",
+          "uuid": "79ac81d6-a40e-4da1-955c-a2b37f397eb4"
+        }
+      ],
+      "sid": "FF1c32a6bf1271ca1b2f63df894d17d7b8"
+    },
+    {
+      "name": "say_play_12",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -1490,
+          "y": 2210
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFcc5f7f26bb0774c1b91b89d08da6a5b6",
+          "uuid": "c6c506ec-b115-4970-a19c-fe9f1cdd47d2"
+        }
+      ],
+      "sid": "FF01b11d5cc39fbe86d31fa5450be1c671"
+    },
+    {
+      "name": "say_play_13",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -2130,
+          "y": 1800
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF5053e7c53fec4c38a71295b4e73c5de3",
+          "uuid": "f9d05566-5979-4b72-8b27-6cde98477840"
+        }
+      ],
+      "sid": "FFb126907d7ee2d7989ddf68ddecab5c62"
+    },
+    {
+      "name": "say_play_14",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -850,
+          "y": 2220
+        },
+        "say": null,
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFf283310e65a140859423115d5efc6cdf",
+          "uuid": "b93e1ad5-2a8a-4d47-83fa-ea34a68eb31d"
+        }
+      ],
+      "sid": "FFe99d16b16e1f898e4bf18c752685d166"
+    },
+    {
+      "name": "Contact_Tracing1_5",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -510,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have you been in close contact with someone who is confirmed or suspected to have  Coronavirus  Press 1. If you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus  press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FFe77d6775f64486b67911f717b980691d",
+          "uuid": "3ecdb099-437e-4bf9-974f-e79e822980f2"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "fd4195f0-454c-40b7-b289-d3e6f406d31e"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FFe99d16b16e1f898e4bf18c752685d166",
+          "uuid": "f51e0f96-23b9-47c4-a4d3-caea3330c286"
+        }
+      ],
+      "sid": "FFf283310e65a140859423115d5efc6cdf"
+    },
+    {
+      "name": "Contact_Options1_5",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -510,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing1_5.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FFe99d16b16e1f898e4bf18c752685d166",
+          "uuid": "f9abe485-2e04-4397-bddc-58e156b12335"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1_5.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF2ec16196c04940034cb11927c0a0841c",
+          "uuid": "ad55e123-b8c9-43d0-b832-486dbe47554d"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1_5.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FFde3734f81d25963f44bd58871b905000",
+          "uuid": "a212f7d6-2c8f-4f00-85fa-95d84c50c3bc"
+        }
+      ],
+      "sid": "FFe77d6775f64486b67911f717b980691d"
+    },
+    {
+      "name": "Contact_Tracing1_2",
+      "type": "Gather",
+      "properties": {
+        "offset": {
+          "x": -1810,
+          "y": 2120
+        },
+        "timeout": 5,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "number_of_digits": null,
+        "save_response_as": null,
+        "say": "If you have you been in close contact with someone who is confirmed or suspected to have  Coronavirus  Press 1. If you have not been in close contact with someone who is confirmed or suspected to have  Coronavirus press 2.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "hints": null,
+        "gather_language": "en",
+        "speech_timeout": "auto",
+        "speech_model": null,
+        "profanity_filter": "true"
+      },
+      "transitions": [
+        {
+          "event": "keypress",
+          "conditions": [],
+          "next": "FF3f99b18e4eaadd395e8b6bdaff4c0d75",
+          "uuid": "e3b956d6-2e1f-48d7-8596-12c262ab4fc5"
+        },
+        {
+          "event": "speech",
+          "conditions": [],
+          "next": null,
+          "uuid": "eb54a0ee-7f49-49f5-911b-60d47b8ca29f"
+        },
+        {
+          "event": "timeout",
+          "conditions": [],
+          "next": "FF6b288b8f7cffa3507c7783e5b9a0f077",
+          "uuid": "4d0ca910-6db7-4ce6-a736-5417917bc3a8"
+        }
+      ],
+      "sid": "FF65c93b53c6b13fa785a2ee82551a32f3"
+    },
+    {
+      "name": "Contact_Options1_2",
+      "type": "Branch",
+      "properties": {
+        "offset": {
+          "x": -1820,
+          "y": 2340
+        },
+        "input": "{{widgets.Contact_Tracing1_2.Digits}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": "FF6b288b8f7cffa3507c7783e5b9a0f077",
+          "uuid": "11665125-0a7d-4cc0-856c-380816a042fc"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "1",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1_2.Digits}}"
+              ],
+              "value": "1"
+            }
+          ],
+          "next": "FF71d1a571ff43239e16c5fc44f482c4f2",
+          "uuid": "8495ec74-7a0f-413a-9ce5-aed14889f1b8"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "2",
+              "type": "equal_to",
+              "arguments": [
+                "{{widgets.Contact_Tracing1_2.Digits}}"
+              ],
+              "value": "2"
+            }
+          ],
+          "next": "FF2ec16196c04940034cb11927c0a0841c",
+          "uuid": "b9de9556-d643-4239-a133-547f6bab3cdb"
+        }
+      ],
+      "sid": "FF3f99b18e4eaadd395e8b6bdaff4c0d75"
+    },
+    {
+      "name": "say_play_15",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -2130,
+          "y": 2170
+        },
+        "say": "Sorry, but that is not the correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF65c93b53c6b13fa785a2ee82551a32f3",
+          "uuid": "fefd236d-9852-4688-84d9-f1d1acdac9cd"
+        }
+      ],
+      "sid": "FF6b288b8f7cffa3507c7783e5b9a0f077"
+    },
+    {
+      "name": "say_play_16",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -850,
+          "y": 510
+        },
+        "say": "Sorry, but that is not a correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FFe518b74cd51970f8209323d9554b6ad9",
+          "uuid": "79f464b6-2892-45cd-862b-656d9c6fd3ff"
+        }
+      ],
+      "sid": "FF73a7bd8147251004294b5780967912a5"
+    },
+    {
+      "name": "say_play_17",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -840,
+          "y": 300
+        },
+        "say": "Sorry, but that is not a correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF662575a20cef8832a6839da62ddff26c",
+          "uuid": "f15d38b8-d2bd-4c69-9c48-048d601b9eb9"
+        }
+      ],
+      "sid": "FF22da4fd07dc46ad8c040c19ec564fc40"
+    },
+    {
+      "name": "say_play_18",
+      "type": "SayPlay",
+      "properties": {
+        "offset": {
+          "x": -840,
+          "y": 90
+        },
+        "say": "Sorry, but that is not a correct response.",
+        "play": null,
+        "voice": null,
+        "language": null,
+        "loop": 1,
+        "digits": null
+      },
+      "transitions": [
+        {
+          "event": "audioComplete",
+          "conditions": [],
+          "next": "FF3807fbf37741ef75c486cb8abe19f052",
+          "uuid": "d56a1f1d-cfe9-47ed-b743-65c094b83591"
+        }
+      ],
+      "sid": "FFcd22f8434e39541d7873717e5ebef1ba"
+    }
+  ]
+}
